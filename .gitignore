@@ -1,0 +1,7 @@
+#macos
+.DS_Store
+**/.DS_Store
+
+build/
+buildjs/
+node_modules/

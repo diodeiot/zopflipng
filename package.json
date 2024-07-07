@@ -1,0 +1,55 @@
+{
+  "name": "zopflipng",
+  "version": "0.9.0",
+  "description": "native addon module of google's zopflipng",
+  "author": "Kadir Sevil <kadir.sevil@diodeiot.com>",
+  "maintainers": [
+    "Kadir Sevil <kadir.sevil@diodeiot.com>"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/diodeiot/zopflipng.git"
+  },
+  "keywords": [
+    "imagemin",
+    "compress",
+    "image",
+    "img",
+    "minify",
+    "optimize",
+    "png",
+    "zopfli",
+    "zopflipng",
+    "addon",
+    "C++",
+    "native",
+    "cmake-js",
+    "napi"
+  ],
+  "files": [
+    "addon",
+    "assets",
+    "buildjs",
+    "install",
+    "test",
+    "third_party/zopfli",
+    "CMakeLists.txt"
+  ],
+  "main": "buildjs/index.js",
+  "types": "buildjs/index.d.js",
+  "scripts": {
+    "placeheaders": "cp node_modules/node-addon-api/napi.h node_modules/node-addon-api/napi-inl.h node_modules/node-addon-api/napi-inl.deprecated.h addon/napi",
+    "prepack": "tsc && yarn postinstall && yarn test && rm -rf third_party/zopfli/build",
+    "test": "node test/index.test.js",
+    "postinstall": "node install"
+  },
+  "dependencies": {
+    "cmake-js": "^7.3.0",
+    "node-addon-api": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "typescript": "^5.5.3"
+  }
+}

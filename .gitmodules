@@ -1,0 +1,4 @@
+[submodule "third_party/zopfli"]
+	path = third_party/zopfli
+	url = https://github.com/google/zopfli
+	ignore = untracked
