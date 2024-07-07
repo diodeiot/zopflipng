@@ -1,6 +1,6 @@
 {
   "name": "zopflipng",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "native addon module of google's zopflipng",
   "author": "Kadir Sevil <kadir.sevil@diodeiot.com>",
   "maintainers": [
@@ -37,10 +37,9 @@
     "CMakeLists.txt"
   ],
   "main": "buildjs/index.js",
-  "types": "buildjs/index.d.js",
   "scripts": {
     "placeheaders": "cp node_modules/node-addon-api/napi.h node_modules/node-addon-api/napi-inl.h node_modules/node-addon-api/napi-inl.deprecated.h addon/napi",
-    "prepack": "tsc && yarn postinstall && yarn test && rm -rf third_party/zopfli/build",
+    "prepack": "node install/cleanbuild.js && tsc && yarn postinstall && yarn test && rm -rf third_party/zopfli/build",
     "test": "node test/index.test.js",
     "postinstall": "node install"
   },

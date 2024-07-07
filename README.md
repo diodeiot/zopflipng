@@ -3,7 +3,7 @@
 zopflipng is a native addon module of google's zopflipng.
 
 > [!WARNING]  
-> Currently this package doesn't use pre-built binaries. It builds addon from source code while package is installed. Compilation process uses `Cmake`, `Make` or `Ninja` so these binaries should be in the path.
+> Currently this package doesn't use pre-built binaries. It builds addon from source code while package is installed. Compilation process uses `Cmake`, `Make` or `Ninja` and `GCC` so these binaries should be in the path.
 
 ## Install
 
@@ -13,9 +13,17 @@ npm install zopflipng
 
 ## Example
 
+```sh
+npm install pngjs
+```
+
 ```js
+import fs from "fs/promises";
 import { optimize } from "zopflipng";
-const pngContent = "[Png content here]";
+
+const pngContent = await fs.readFile(
+  "node_modules/pngquantjs/assets/nodejs.png"
+);
 const options = {
   verbose: true,
   lossy_transparent: false,

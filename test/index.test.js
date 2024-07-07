@@ -1,6 +1,5 @@
 const fs = require("fs/promises");
-const { optimize, ZopfliPNGFilterStrategy } = require("../buildjs");
-const { assert } = require("console");
+const { optimize } = require("../buildjs");
 
 async function test() {
   const pngContent = await fs.readFile("./assets/nodejs.png");
