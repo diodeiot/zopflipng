@@ -59,7 +59,7 @@ export type ZopfliPNGOptions = {
   num_iterations_large: number;
 };
 
-export function optimize(data: Buffer, options?: ZopfliPNGOptions) {
+export function optimize(data: Buffer, options?: Partial<ZopfliPNGOptions>) {
   return zopflipng.optimize(
     data,
     options?.verbose ?? true,
