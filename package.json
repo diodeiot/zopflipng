@@ -1,6 +1,6 @@
 {
   "name": "zopflipng",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "native addon module of google's zopflipng",
   "author": "Kadir Sevil <kadir.sevil@diodeiot.com>",
   "maintainers": [
