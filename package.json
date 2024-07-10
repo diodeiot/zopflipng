@@ -39,9 +39,11 @@
   "main": "buildjs/index.js",
   "scripts": {
     "placeheaders": "node install/placeheaders.js",
-    "prepack": "node install/cleanbuild.js && tsc && yarn postinstall && yarn test && rm -rf third_party/zopfli/build",
+    "build:addon": "yarn placeheaders && node install",
+    "build": "yarn build:addon && node install/cleanbuild.js && tsc",
+    "prepack": "yarn build && yarn test && rm -rf third_party/zopfli/build",
     "test": "node test/index.test.js",
-    "postinstall": "node install"
+    "postinstall": "yarn build:addon"
   },
   "dependencies": {
     "cmake-js": "^7.3.0",

@@ -3,6 +3,9 @@
 zopflipng is a native addon module of google's zopflipng.
 
 > [!WARNING]  
+> Curently this package can only run on unix-like systems
+
+> [!WARNING]  
 > Currently this package doesn't use pre-built binaries. It builds addon from source code while package is installed. Compilation process uses `Cmake`, `Make` or `Ninja` and `GCC` so these binaries should be in the path.
 
 ## Install
@@ -47,6 +50,7 @@ optimize(pngContent, options);
 git clone https://github.com/diodeiot/zopflipng --recursive
 cd zopflipng
 yarn
+yarn build
 ```
 
 When contributing code, please write relevant tests and run `npm test` before submitting pull requests.

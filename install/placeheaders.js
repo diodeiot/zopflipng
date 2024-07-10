@@ -1,7 +1,10 @@
 const fs = require("fs/promises");
 
 async function placeheaders() {
-  await fs.rm("addon/napi", { recursive: true, force: true });
+  try {
+    await fs.access("addon/napi", fs.constants.F_OK);
+    return;
+  } catch (error) {}
   await fs.mkdir("addon/napi");
   await fs.copyFile("node_modules/node-addon-api/napi.h", "addon/napi/napi.h");
   await fs.copyFile(
