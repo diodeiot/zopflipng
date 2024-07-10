@@ -30,7 +30,7 @@ async function install() {
       nproc ? "-j$(nproc)" : ""
     }`
   );
-  await execp("npx cmake-js compile");
+  await execp('npx cmake-js compile -G "Unix Makefiles"');
 }
 
 install();

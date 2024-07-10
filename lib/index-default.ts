@@ -1,4 +1,4 @@
-const zopflipng = require("../build/Release/zopflipng.node");
+const zopflipng = require("../build/Release/zopflipng_addon.node");
 
 export enum ZopfliPNGFilterStrategy {
   kStrategyZero,
