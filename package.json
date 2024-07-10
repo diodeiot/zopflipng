@@ -38,7 +38,7 @@
   ],
   "main": "buildjs/index.js",
   "scripts": {
-    "placeheaders": "cp node_modules/node-addon-api/napi.h node_modules/node-addon-api/napi-inl.h node_modules/node-addon-api/napi-inl.deprecated.h addon/napi",
+    "placeheaders": "node install/placeheaders.js",
     "prepack": "node install/cleanbuild.js && tsc && yarn postinstall && yarn test && rm -rf third_party/zopfli/build",
     "test": "node test/index.test.js",
     "postinstall": "node install"
