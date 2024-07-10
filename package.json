@@ -49,6 +49,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.14.10",
+    "pngjs": "^7.0.0",
     "typescript": "^5.5.3"
   }
 }
