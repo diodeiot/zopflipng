@@ -66,7 +66,7 @@ export function optimize(data: Buffer, options?: Partial<ZopfliPNGOptions>) {
     options?.lossy_transparent ?? false,
     options?.lossy_8bit ?? false,
     options?.filter_strategies ?? [],
-    options?.auto_filter_strategy ?? false,
+    options?.auto_filter_strategy ?? true,
     options?.keep_colortype ?? false,
     options?.keepchunks ?? [],
     options?.use_zopfli ?? true,
