@@ -3,8 +3,6 @@
 #include <napi.h>
 #include "zopflipng_lib.h"
 
-#include "util.h"
-
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wbackslash-newline-escape"
 #define ARG_CHECK(env, eval, message)             \
