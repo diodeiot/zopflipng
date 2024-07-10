@@ -84,7 +84,7 @@ Napi::Value optimize(const Napi::CallbackInfo &info)
     std::vector<uint8_t> result;
     int ret = ZopfliPNGOptimize(data, options, options.verbose, &result);
     ARG_CHECK(env, ret == 0, "ZopfliPNGOptimize() returned=" + std::to_string(ret));
-    return Napi::Buffer<uint8_t>::New(env, result.data(), result.size());
+    return Napi::Buffer<uint8_t>::Copy(env, result.data(), result.size());
 }
 
 Napi::Object Optimize(Napi::Env env, Napi::Object exports)
