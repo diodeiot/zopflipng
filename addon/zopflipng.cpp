@@ -3,15 +3,12 @@
 #include <napi.h>
 #include "zopflipng_lib.h"
 
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wbackslash-newline-escape"
 #define ARG_CHECK(env, eval, message)             \
     do                                            \
     {                                             \
         if (!(eval))                              \
             throw Napi::Error::New(env, message); \
     } while (0);
-#pragma GCC diagnostic pop
 
 Napi::Value optimize(const Napi::CallbackInfo &info)
 {
