@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 project(zopflipng_addon)
 set(CMAKE_CXX_STANDARD 11)
 
@@ -15,12 +16,5 @@ set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "" SUFFIX ".node")
 target_link_libraries(${PROJECT_NAME} ${CMAKE_JS_LIB})
 
 add_subdirectory(third_party/zopfli)
-target_link_directories(zopflipng_addon PRIVATE Zopfli)
-
-target_link_libraries(
-  ${PROJECT_NAME}
-  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zopfli/build/libzopfli.a)
-
-target_link_libraries(
-  ${PROJECT_NAME}
-  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/zopfli/build/libzopflipng.a)
+target_link_libraries(${PROJECT_NAME} libzopflipng)
+target_compile_options(libzopflipng PRIVATE -fPIC)
